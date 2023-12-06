@@ -69,6 +69,6 @@ minimun_cubes = games.map do |game|
   end
 end
 
-p "valid ids", valid_ids.inject(:+)
+p "valid ids Part 1", valid_ids.inject(:+)
 
-p "minimun_cubes", minimun_cubes.inject(:+)
+p "minimun_cubes Part 2", minimun_cubes.inject(:+)
