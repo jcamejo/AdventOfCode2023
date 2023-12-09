@@ -12,6 +12,7 @@ end
 def map_engine(lines)
   mapped_engine = []
   mapped_line = []
+  prev_element = nil
 
   lines.each_with_index do |line, y|
     line.chars.each_with_index do |element, x|
@@ -19,7 +20,8 @@ def map_engine(lines)
         x:,
         y:,
         element_type: element_type(element),
-        element:
+        element:,
+        prev_element:,
       )
     end
 
@@ -125,7 +127,7 @@ engine_map.each_with_index do |line, index|
   line.each_with_index do |element, i|
     if element.element_type == "number"
       possible_number << element
-      symbols = find_adjacent_symbols(engine_map, element)
+      symbols = find_adjacent_symbols(flat_engine, element)
       adjacent_symbol = true if symbols.any?
     end
 
